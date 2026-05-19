@@ -1,5 +1,20 @@
 const WHATSAPP_NUMBER = '+573174169411';
 
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+
+document.getElementById('themeToggle').addEventListener('click', () => {
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  if (isDark) {
+    html.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'light');
+  } else {
+    html.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+  }
+});
+
 window.addEventListener('load', () => {
   document.getElementById('loader').classList.add('hidden');
   loadProducts();
