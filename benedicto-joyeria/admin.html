@@ -10,7 +10,6 @@
 </head>
 <body>
 
-  <!-- Login -->
   <div class="login-screen" id="loginScreen">
     <div class="login-box">
       <h1>Benedicto</h1>
@@ -21,7 +20,6 @@
     </div>
   </div>
 
-  <!-- Dashboard -->
   <div class="dashboard" id="dashboard">
     <div class="admin-header">
       <h1>Benedicto · Admin</h1>
@@ -31,70 +29,133 @@
       </div>
     </div>
 
+    <div class="admin-tabs">
+      <button class="tab active" data-tab="products">Artículos</button>
+      <button class="tab" data-tab="gallery">Galería</button>
+      <button class="tab" data-tab="reviews">Reseñas</button>
+    </div>
+
     <div class="admin-body">
-      <h2>Artículos</h2>
 
-      <button class="btn btn-primary" onclick="showForm()" style="width:auto;margin-bottom:24px">+ Nuevo artículo</button>
+      <!-- ═══ PRODUCTS ═══ -->
+      <div class="tab-content active" id="tab-products">
+        <h2>Artículos</h2>
+        <button class="btn btn-primary btn-sm" onclick="showForm()" style="margin-bottom:24px">+ Nuevo artículo</button>
 
-      <!-- Form -->
-      <div class="product-form" id="productForm">
-        <h3 id="formTitle">Nuevo artículo</h3>
+        <div class="product-form" id="productForm">
+          <h3 id="formTitle">Nuevo artículo</h3>
 
-        <div class="form-group">
-          <label for="categoryInput">Categoría</label>
-          <select id="categoryInput">
-            <option value="">Seleccionar…</option>
-            <option value="Cadena">Cadena</option>
-            <option value="Pulsera">Pulsera</option>
-            <option value="Anillo">Anillo</option>
-            <option value="Colgante">Colgante</option>
-            <option value="Aretes">Aretes</option>
-            <option value="Otro">Otro</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="titleInput">Título</label>
-          <input type="text" id="titleInput" placeholder="Ej: Link Clásico">
-        </div>
-
-        <div class="form-row">
           <div class="form-group">
-            <label for="priceInput">Precio</label>
-            <input type="text" id="priceInput" placeholder="Ej: 189 USD">
+            <label for="categoryInput">Categoría</label>
+            <select id="categoryInput">
+              <option value="">Seleccionar…</option>
+              <option value="Cadena">Cadena</option>
+              <option value="Pulsera">Pulsera</option>
+              <option value="Anillo">Anillo</option>
+              <option value="Colgante">Colgante</option>
+              <option value="Aretes">Aretes</option>
+              <option value="Otro">Otro</option>
+            </select>
           </div>
+
           <div class="form-group">
-            <label for="imageInput">URL de la foto</label>
-            <input type="url" id="imageInput" placeholder="https://ejemplo.com/foto.jpg">
-            <div id="imagePreview" style="margin-top:8px"></div>
+            <label for="titleInput">Título</label>
+            <input type="text" id="titleInput" placeholder="Ej: Link Clásico">
+          </div>
+
+          <div class="form-group">
+            <label for="priceInput">Precio (COP)</label>
+            <input type="text" id="priceInput" placeholder="Ej: 189000">
+          </div>
+
+          <div class="form-group">
+            <label for="descInput">Descripción</label>
+            <textarea id="descInput" placeholder="Breve descripción del artículo…"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Fotos del artículo</label>
+            <div class="multi-upload" id="multiUpload">
+              <input type="file" accept="image/*" multiple id="imageFiles">
+              <button type="button" class="btn btn-outline btn-sm" onclick="uploadImages()">Subir fotos</button>
+            </div>
+            <div class="image-list" id="imageList"></div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-primary btn-sm" onclick="saveProduct()">Guardar</button>
+            <button class="btn btn-outline btn-sm" onclick="hideForm()">Cancelar</button>
           </div>
         </div>
 
-        <div class="form-group">
-          <label for="descriptionInput">Descripción</label>
-          <textarea id="descriptionInput" placeholder="Breve descripción del artículo…"></textarea>
-        </div>
-
-        <div class="form-actions">
-          <button class="btn btn-primary btn-sm" onclick="saveProduct()">Guardar</button>
-          <button class="btn btn-outline btn-sm" onclick="hideForm()">Cancelar</button>
+        <div class="table-wrapper">
+          <table class="product-table" id="productTable">
+            <thead>
+              <tr>
+                <th>Foto</th>
+                <th>Título</th>
+                <th>Categoría</th>
+                <th>Precio</th>
+                <th>Fotos</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
         </div>
       </div>
 
-      <!-- Table -->
-      <table class="product-table" id="productTable">
-        <thead>
-          <tr>
-            <th>Foto</th>
-            <th>Título</th>
-            <th>Categoría</th>
-            <th>Precio</th>
-            <th>Descripción</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+      <!-- ═══ GALLERY ═══ -->
+      <div class="tab-content" id="tab-gallery">
+        <h2>Galería — Instantes de luz</h2>
+        <div class="gallery-upload">
+          <input type="file" accept="image/*" multiple id="galleryFiles">
+          <button class="btn btn-primary btn-sm" onclick="uploadGalleryImages()">Subir a galería</button>
+        </div>
+        <div class="gallery-admin-grid" id="galleryAdminGrid">
+          <p style="color:var(--muted)">Cargando…</p>
+        </div>
+      </div>
+
+      <!-- ═══ REVIEWS ═══ -->
+      <div class="tab-content" id="tab-reviews">
+        <h2>Reseñas</h2>
+        <div class="product-form" id="reviewForm">
+          <h3>Nueva reseña</h3>
+          <div class="form-group">
+            <label for="reviewName">Nombre</label>
+            <input type="text" id="reviewName" placeholder="Nombre del cliente">
+          </div>
+          <div class="form-group">
+            <label for="reviewRating">Calificación (1-5)</label>
+            <select id="reviewRating">
+              <option value="5">★★★★★ (5)</option>
+              <option value="4">★★★★☆ (4)</option>
+              <option value="3">★★★☆☆ (3)</option>
+              <option value="2">★★☆☆☆ (2)</option>
+              <option value="1">★☆☆☆☆ (1)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="reviewComment">Comentario</label>
+            <textarea id="reviewComment" placeholder="Comentario del cliente…"></textarea>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary btn-sm" onclick="saveReview()">Guardar</button>
+            <button class="btn btn-outline btn-sm" onclick="hideReviewForm()">Cancelar</button>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="showReviewForm()" style="margin-bottom:24px">+ Nueva reseña</button>
+        <div class="table-wrapper">
+          <table class="product-table" id="reviewTable">
+            <thead>
+              <tr><th>Nombre</th><th>Calif.</th><th>Comentario</th><th>Fecha</th><th>Acción</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
     </div>
   </div>
 

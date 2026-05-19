@@ -5,23 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Benedicto — Joyería</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <!-- Loader -->
   <div class="loader" id="loader">
     <div class="loader-ring"></div>
   </div>
 
-  <!-- Nav -->
   <nav id="nav">
     <a href="#" class="nav-logo">Benedicto<span>.</span></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#collection">Colección</a></li>
       <li><a href="#about">Nosotros</a></li>
       <li><a href="#gallery">Galería</a></li>
+      <li><a href="#reviews">Reseñas</a></li>
       <li><a href="#contact">Contacto</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="Menú">
@@ -29,7 +28,6 @@
     </button>
   </nav>
 
-  <!-- Hero -->
   <section class="hero" id="hero">
     <div class="hero-content">
       <span class="hero-badge reveal">Nueva Temporada</span>
@@ -44,13 +42,8 @@
         <a href="#about" class="btn btn-outline">Conocer más</a>
       </div>
     </div>
-    <!-- <div class="hero-scroll">
-      <span>Scroll</span>
-      <div class="line"></div>
-    </div> -->
   </section>
 
-  <!-- Collection -->
   <section id="collection">
     <div class="collection-header">
       <p class="section-label reveal">Colección</p>
@@ -59,19 +52,15 @@
         Piezas seleccionadas a mano, donde cada línea cuenta una historia.
       </p>
     </div>
-
     <div class="grid" id="productGrid">
-      <!-- Products loaded dynamically from admin panel -->
       <div class="loading-products" style="grid-column:1/-1;text-align:center;padding:48px;color:var(--muted)">Cargando artículos…</div>
     </div>
   </section>
 
-  <!-- Divider parallax -->
   <div class="divider" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22%3E%3Cg fill=%22%23c9a96c%22 fill-opacity=%220.06%22%3E%3Cpath d=%22M40 0L80 40 40 80 0 40z%22/%3E%3C/g%3E%3C/svg%3E'); background-color: #1a1a1a;">
     <p class="divider-text reveal">« La elegancia no se trata de ser visto, sino de ser recordado »</p>
   </div>
 
-  <!-- About -->
   <section id="about" class="about">
     <div class="about-grid">
       <div class="about-visual reveal"></div>
@@ -79,18 +68,17 @@
         <p class="section-label reveal">Nosotros</p>
         <h2 class="section-title reveal reveal-delay-1">Artesanía contemporánea</h2>
         <p class="section-sub reveal reveal-delay-2">
-          En BENEDICTO creemos que la verdadera joyería no necesita gritar. Cada pieza nace de la 
-          búsqueda del equilibrio perfecto entre tradición y diseño minimalista. Trabajamos con 
+          En BENEDICTO creemos que la verdadera joyería no necesita gritar. Cada pieza nace de la
+          búsqueda del equilibrio perfecto entre tradición y diseño minimalista. Trabajamos con
           materiales nobles para crear accesorios que te acompañen siempre.
         </p>
         <div class="reveal reveal-delay-3">
-          <a href="#contact" class="btn btn-primary" style="background:var(--gold);color:var(--fg);">Escribenos</a>
+          <a href="https://wa.me/573174169411" target="_blank" class="btn btn-primary" style="background:var(--gold);color:var(--fg);">Escribenos</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Gallery -->
   <section id="gallery">
     <div class="collection-header">
       <p class="section-label reveal">Galería</p>
@@ -99,40 +87,91 @@
         La luz encuentra su camino a través del metal y la piedra.
       </p>
     </div>
-    <div class="gallery-grid">
-      <div class="gallery-item reveal"></div>
-      <div class="gallery-item reveal reveal-delay-1"></div>
-      <div class="gallery-item reveal reveal-delay-2"></div>
-      <div class="gallery-item reveal reveal-delay-3"></div>
-      <div class="gallery-item reveal reveal-delay-4"></div>
-      <div class="gallery-item reveal"></div>
+    <div class="gallery-grid" id="galleryGrid">
+      <div style="grid-column:1/-1;text-align:center;padding:48px;color:var(--muted)">Cargando galería…</div>
     </div>
   </section>
 
-  <!-- Contact -->
+  <section id="reviews" class="reviews-section">
+    <div class="collection-header">
+      <p class="section-label reveal">Reseñas</p>
+      <h2 class="section-title reveal reveal-delay-1">Lo que dicen de nosotros</h2>
+      <p class="section-sub reveal reveal-delay-2">
+        La opinión de nuestros clientes es lo que nos impulsa a mejorar cada día.
+      </p>
+    </div>
+    <div class="reviews-grid" id="reviewsGrid">
+      <div style="grid-column:1/-1;text-align:center;padding:48px;color:var(--muted)">Cargando reseñas…</div>
+    </div>
+  </section>
+
   <section id="contact" class="contact">
     <div class="contact-inner">
       <p class="section-label reveal">Contacto</p>
       <h2 class="section-title reveal reveal-delay-1">Mantengámonos en contacto</h2>
       <p class="section-sub reveal reveal-delay-2">
-        Suscríbete para recibir las nuevas colecciones y ediciones limitadas antes que nadie.
+        Síguenos en redes sociales o escríbenos directamente.
       </p>
-      <form class="newsletter reveal reveal-delay-3" onsubmit="event.preventDefault();alert('¡Gracias por suscribirte!');">
-        <input type="email" placeholder="tu@correo.com" required>
-        <button type="submit">Suscribir</button>
-      </form>
+      <div class="social-links reveal reveal-delay-3">
+        <a href="https://www.instagram.com/benedicto.joyeria/" target="_blank" class="social-link" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <span>Instagram</span>
+        </a>
+        <a href="https://www.tiktok.com/@benedicto.joyeria" target="_blank" class="social-link" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+          <span>TikTok</span>
+        </a>
+        <a href="https://wa.me/573174169411" target="_blank" class="social-link" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <span>WhatsApp</span>
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <section class="map-section">
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?q=Cali,+Valle+del+Cauca,+Colombia"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
   <footer>
     <span>&copy; 2026 BENEDICTO — Hecho con dedicación.</span>
     <div class="footer-links">
-      <a href="#">Instagram</a>
-      <a href="#">Pinterest</a>
-      <a href="#">TikTok</a>
+      <a href="https://www.instagram.com/benedicto.joyeria/" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@benedicto.joyeria" target="_blank">TikTok</a>
+      <a href="https://wa.me/573174169411" target="_blank">WhatsApp</a>
     </div>
   </footer>
+
+  <div class="modal-overlay" id="productModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-layout">
+        <div class="modal-carousel">
+          <div class="carousel-main" id="carouselMain">
+            <img src="" alt="" id="carouselImage">
+            <button class="carousel-btn carousel-prev" id="carouselPrev">&lsaquo;</button>
+            <button class="carousel-btn carousel-next" id="carouselNext">&rsaquo;</button>
+          </div>
+          <div class="carousel-thumbs" id="carouselThumbs"></div>
+        </div>
+        <div class="modal-info">
+          <p class="product-category" id="modalCategory"></p>
+          <h3 class="product-name" id="modalTitle"></h3>
+          <p class="product-price" id="modalPrice"></p>
+          <p class="modal-desc" id="modalDesc"></p>
+          <a href="" target="_blank" class="btn btn-primary modal-whatsapp" id="modalWhatsApp">Contactar por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/script.js"></script>
 </body>
 </html>
