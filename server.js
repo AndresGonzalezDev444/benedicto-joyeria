@@ -71,7 +71,7 @@ app.use(express.static(path.join(__dirname, 'benedicto-joyeria'), {
   index: false
 }));
 
-app.get('/admin.html', requireAuth, (req, res) => {
+app.get('/admin.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'benedicto-joyeria', 'admin.html'));
 });
 
