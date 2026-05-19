@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benedicto — Joyería</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-ring"></div>
+  </div>
+
+  <!-- Nav -->
+  <nav id="nav">
+    <a href="#" class="nav-logo">Benedicto<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#collection">Colección</a></li>
+      <li><a href="#about">Nosotros</a></li>
+      <li><a href="#gallery">Galería</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <span class="hero-badge reveal">Nueva Temporada</span>
+      <h1 class="reveal reveal-delay-1">
+        Donde el detalle<br>se convierte en <em>arte</em>
+      </h1>
+      <p class="reveal reveal-delay-2">
+        Cadenas, pulseras y accesorios diseñados para quienes valoran la belleza en lo simple.
+      </p>
+      <div class="hero-cta reveal reveal-delay-3">
+        <a href="#collection" class="btn btn-primary">Explorar</a>
+        <a href="#about" class="btn btn-outline">Conocer más</a>
+      </div>
+    </div>
+    <!-- <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="line"></div>
+    </div> -->
+  </section>
+
+  <!-- Collection -->
+  <section id="collection">
+    <div class="collection-header">
+      <p class="section-label reveal">Colección</p>
+      <h2 class="section-title reveal reveal-delay-1">Esencia dorada</h2>
+      <p class="section-sub reveal reveal-delay-2">
+        Piezas seleccionadas a mano, donde cada línea cuenta una historia.
+      </p>
+    </div>
+
+    <div class="grid" id="productGrid">
+      <!-- Products loaded dynamically from admin panel -->
+      <div class="loading-products" style="grid-column:1/-1;text-align:center;padding:48px;color:var(--muted)">Cargando artículos…</div>
+    </div>
+  </section>
+
+  <!-- Divider parallax -->
+  <div class="divider" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22%3E%3Cg fill=%22%23c9a96c%22 fill-opacity=%220.06%22%3E%3Cpath d=%22M40 0L80 40 40 80 0 40z%22/%3E%3C/g%3E%3C/svg%3E'); background-color: #1a1a1a;">
+    <p class="divider-text reveal">« La elegancia no se trata de ser visto, sino de ser recordado »</p>
+  </div>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <div class="about-grid">
+      <div class="about-visual reveal"></div>
+      <div>
+        <p class="section-label reveal">Nosotros</p>
+        <h2 class="section-title reveal reveal-delay-1">Artesanía contemporánea</h2>
+        <p class="section-sub reveal reveal-delay-2">
+          En BENEDICTO creemos que la verdadera joyería no necesita gritar. Cada pieza nace de la 
+          búsqueda del equilibrio perfecto entre tradición y diseño minimalista. Trabajamos con 
+          materiales nobles para crear accesorios que te acompañen siempre.
+        </p>
+        <div class="reveal reveal-delay-3">
+          <a href="#contact" class="btn btn-primary" style="background:var(--gold);color:var(--fg);">Escribenos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <div class="collection-header">
+      <p class="section-label reveal">Galería</p>
+      <h2 class="section-title reveal reveal-delay-1">Instantes de luz</h2>
+      <p class="section-sub reveal reveal-delay-2">
+        La luz encuentra su camino a través del metal y la piedra.
+      </p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal"></div>
+      <div class="gallery-item reveal reveal-delay-1"></div>
+      <div class="gallery-item reveal reveal-delay-2"></div>
+      <div class="gallery-item reveal reveal-delay-3"></div>
+      <div class="gallery-item reveal reveal-delay-4"></div>
+      <div class="gallery-item reveal"></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="contact-inner">
+      <p class="section-label reveal">Contacto</p>
+      <h2 class="section-title reveal reveal-delay-1">Mantengámonos en contacto</h2>
+      <p class="section-sub reveal reveal-delay-2">
+        Suscríbete para recibir las nuevas colecciones y ediciones limitadas antes que nadie.
+      </p>
+      <form class="newsletter reveal reveal-delay-3" onsubmit="event.preventDefault();alert('¡Gracias por suscribirte!');">
+        <input type="email" placeholder="tu@correo.com" required>
+        <button type="submit">Suscribir</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <span>&copy; 2026 BENEDICTO — Hecho con dedicación.</span>
+    <div class="footer-links">
+      <a href="#">Instagram</a>
+      <a href="#">Pinterest</a>
+      <a href="#">TikTok</a>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>

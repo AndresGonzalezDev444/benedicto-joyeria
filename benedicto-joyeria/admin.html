@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benedicto — Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- Login -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-box">
+      <h1>Benedicto</h1>
+      <p>Panel de administración</p>
+      <input type="password" id="passwordInput" placeholder="Contraseña" autocomplete="off">
+      <p class="error" id="loginError"></p>
+      <button class="btn btn-primary" onclick="handleLogin()">Ingresar</button>
+    </div>
+  </div>
+
+  <!-- Dashboard -->
+  <div class="dashboard" id="dashboard">
+    <div class="admin-header">
+      <h1>Benedicto · Admin</h1>
+      <div class="admin-links">
+        <a href="/" target="_blank">Ver tienda</a>
+        <a href="#" onclick="handleLogout()" style="color:var(--red)">Cerrar sesión</a>
+      </div>
+    </div>
+
+    <div class="admin-body">
+      <h2>Artículos</h2>
+
+      <button class="btn btn-primary" onclick="showForm()" style="width:auto;margin-bottom:24px">+ Nuevo artículo</button>
+
+      <!-- Form -->
+      <div class="product-form" id="productForm">
+        <h3 id="formTitle">Nuevo artículo</h3>
+
+        <div class="form-group">
+          <label for="categoryInput">Categoría</label>
+          <select id="categoryInput">
+            <option value="">Seleccionar…</option>
+            <option value="Cadena">Cadena</option>
+            <option value="Pulsera">Pulsera</option>
+            <option value="Anillo">Anillo</option>
+            <option value="Colgante">Colgante</option>
+            <option value="Aretes">Aretes</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="titleInput">Título</label>
+          <input type="text" id="titleInput" placeholder="Ej: Link Clásico">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="priceInput">Precio</label>
+            <input type="text" id="priceInput" placeholder="Ej: 189 USD">
+          </div>
+          <div class="form-group">
+            <label for="imageInput">URL de la foto</label>
+            <input type="url" id="imageInput" placeholder="https://ejemplo.com/foto.jpg">
+            <div id="imagePreview" style="margin-top:8px"></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="descriptionInput">Descripción</label>
+          <textarea id="descriptionInput" placeholder="Breve descripción del artículo…"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-primary btn-sm" onclick="saveProduct()">Guardar</button>
+          <button class="btn btn-outline btn-sm" onclick="hideForm()">Cancelar</button>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <table class="product-table" id="productTable">
+        <thead>
+          <tr>
+            <th>Foto</th>
+            <th>Título</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th>Descripción</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

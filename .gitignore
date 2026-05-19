@@ -1,0 +1,5 @@
+node_modules/
+.env
+benedicto-joyeria/uploads/
+data.db*
+
